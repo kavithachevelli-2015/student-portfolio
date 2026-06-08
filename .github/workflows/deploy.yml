@@ -22,4 +22,6 @@ jobs:
 
       - name: Deploy Files to S3
         run: |
-          aws s3 sync . s3://student-port2015 --delete
+          aws s3 sync . s3://student-port2015 --delete\
+            --exclude ".git/*" \
+            --exclude ".github/*"
